@@ -1,6 +1,6 @@
 ## 專案介紹
 
-本專案是一個基於 **Flask** 的影像處理應用，提供臉部偵測、單物件與多物件追蹤、臉部馬賽克功能。透過 `OpenCV` 進行影像分析，並透過 API 讓前端或其他應用存取處理後的影像。
+本專案是一個基於 **Flask** 的影像處理應用，提供臉部偵測、單物件與多物件追蹤、臉部馬賽克與五官偵測功能。透過 `OpenCV` 進行影像分析，並透過 API 讓前端或其他應用存取處理後的影像。
 
 ## 功能特點
 
@@ -8,7 +8,7 @@
 - **臉部馬賽克 (`face_mosaic.py`)**：對偵測到的人臉應用馬賽克處理，保護隱私。
 - **單物件追蹤 (`single_object_tracking.py`)**：透過 `OpenCV` 的 `TrackerCSRT` 進行 **單個物件追蹤**。
 - **多物件追蹤 (`multi_object_tracking.py`)**：使用 `MultiTracker` 同時追蹤 **多個物件**，可追蹤不同區域內的物件。
-- **影像特徵偵測 (`detect_features.py`)**：擷取影像特徵點。
+- **五官偵測 (`detect_features.py`)**：偵測影像中的眼睛、嘴巴和鼻子，並以不同顏色框出。
 - **Flask API (`app.py`)**：提供 RESTful API 介面，前端可透過 HTTP 請求進行影像處理。
 
 ## 安裝與使用
@@ -117,6 +117,22 @@ python app.py
   }
   ```
 
+#### **五官偵測**
+- **端點**：`POST /detect_features`
+- **功能**：偵測影像中的眼睛（綠色框）、嘴巴（紅色框）和鼻子（藍色框）。
+- **請求範例**：
+  ```json
+  {
+    "frame": "<base64 encoded image>"
+  }
+  ```
+- **回應範例**：
+  ```json
+  {
+    "frame": "<base64 encoded image with detected features>"
+  }
+  ```
+
 ## 技術細節
 
 ### 1. **Flask API**
@@ -128,9 +144,9 @@ python app.py
 - **馬賽克處理**：透過 `cv2.resize` 來縮放影像區域並模糊化。
 - **單物件追蹤**：使用 `cv2.TrackerCSRT_create()` 來進行 **單物件追蹤**。
 - **多物件追蹤**：使用 `cv2.MultiTracker_create()` 來管理 **多個物件的追蹤**。
+- **五官偵測**：結合多個 Haar Cascade 模型來偵測眼睛、嘴巴和鼻子，並以不同顏色標註。
 
 ## 授權條款
 
 本專案採用 **MIT License**，允許自由使用與修改，惟請保留原始授權條款。
-
 
