@@ -4,7 +4,7 @@
 
 ## 功能特點
 
-- **臉部偵測 (`face_detection.py`)**：使用 `OpenCV` 偵測影像中的人臉。
+- **臉部偵測 (`face_detection.py`)**：使用 `OpenCV` 偵測影像中的人臉是否為同一人。
 - **臉部馬賽克 (`face_mosaic.py`)**：對偵測到的人臉應用馬賽克處理，保護隱私。
 - **單物件追蹤 (`single_object_tracking.py`)**：透過 `OpenCV` 的 `TrackerCSRT` 進行 **單個物件追蹤**。
 - **多物件追蹤 (`multi_object_tracking.py`)**：使用 `MultiTracker` 同時追蹤 **多個物件**，可追蹤不同區域內的物件。
