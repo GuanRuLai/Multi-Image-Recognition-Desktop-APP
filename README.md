@@ -41,7 +41,7 @@ python app.py
     "frame": "<base64 encoded image>"
   }
   ```
-- **回應**：
+- **回應範例**：
   ```json
   {
     "faces": [[100, 150, 50, 50], [200, 250, 60, 60]]
@@ -56,7 +56,7 @@ python app.py
     "frame": "<base64 encoded image>"
   }
   ```
-- **回應**：
+- **回應範例**：
   ```json
   {
     "frame": "<base64 encoded image with mosaic>"
@@ -83,7 +83,7 @@ python app.py
     "mode": "track"
   }
   ```
-- **回應**：
+- **回應範例**：
   ```json
   {
     "frame": "<base64 encoded tracked image>"
@@ -110,7 +110,7 @@ python app.py
     "mode": "track"
   }
   ```
-- **回應**：
+- **回應範例**：
   ```json
   {
     "frame": "<base64 encoded tracked image>"
