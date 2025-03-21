@@ -140,7 +140,6 @@ python app.py
 - 使用 `request.json` 解析前端傳送的 **Base64 影像**。
 
 ### 2. **OpenCV 影像處理**
-- **臉部偵測**：使用 `haarcascade_frontalface_default.xml` 進行人臉識別。
 - **馬賽克處理**：透過 `cv2.resize` 來縮放影像區域並模糊化。
 - **單物件追蹤**：使用 `cv2.TrackerCSRT_create()` 來進行 **單物件追蹤**。
 - **多物件追蹤**：使用 `cv2.MultiTracker_create()` 來管理 **多個物件的追蹤**。
